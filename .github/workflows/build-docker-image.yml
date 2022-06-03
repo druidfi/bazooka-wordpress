@@ -64,7 +64,7 @@ jobs:
 
       - name: Test
         run: |
-          docker run --rm \
+          docker run --rm --detach -p 80:8080 \
             --env DB_HOST=${{ env.DB_HOST }} --env DB_NAME=${{ env.DB_NAME }} \
             --env DB_USER=${{ env.DB_USER }} --env DB_PASS=${{ env.DB_PASS }} \
             ${{ env.IMAGE }}:latest
