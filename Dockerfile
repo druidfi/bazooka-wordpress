@@ -1,5 +1,7 @@
 FROM druidfi/php-fpm:8.1
 
+LABEL org.opencontainers.image.description="WordPress base image to be used with Bazooka"
+
 RUN sudo apk --update --no-cache add \
     imagemagick mysql-client nginx \
     php81-{bcmath,ctype,dom,exif,gd,intl,mysqli,pecl-imagick,pdo,pdo_mysql,simplexml,sockets,sodium,tokenizer,xml} \
