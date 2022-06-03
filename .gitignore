@@ -1,0 +1,7 @@
+/.idea/
+/vendor/
+/public/wp-includes/
+/public/wp-admin/
+/public/wp-content/
+/public/wp-config.php
+/public/*

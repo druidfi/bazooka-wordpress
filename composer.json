@@ -1,0 +1,54 @@
+{
+  "name": "druidfi/bazooka-wordpress",
+  "type": "project",
+  "description": "Wordpress",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Druid.fi",
+      "email": "info@druid.fi"
+    }
+  ],
+  "require": {
+    "composer/installers": "^2",
+    "johnpbloch/wordpress": "^6",
+    "wp-cli/wp-cli": "^2"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "johnpbloch/wordpress-core-installer": true
+    }
+  },
+  "extra": {
+    "installer-paths": {
+      "public/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "public/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "vendor/wordpress"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-install-cmd": [
+      "@copy-wordpress"
+    ],
+    "post-update-cmd": [
+      "@copy-wordpress"
+    ],
+    "copy-wordpress": [
+      "cp -fR vendor/wordpress/* public"
+    ]
+  }
+}
