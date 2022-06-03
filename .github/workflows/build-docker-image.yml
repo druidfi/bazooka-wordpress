@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/build-docker-image.yml'
+      - 'files/**'
+      - 'mu-plugins/**'
+      - 'composer.*'
+      - 'Dockerfile'
+      - 'wp-config.php'
 
 env:
   IMAGE: ghcr.io/druidfi/bazooka-wordpress
