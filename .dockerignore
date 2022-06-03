@@ -1,3 +1,4 @@
 .github
-files
-vendor
+files/app/public/wp-admin
+files/app/public/wp-includes
+files/app/vendor
