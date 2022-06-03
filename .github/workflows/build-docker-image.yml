@@ -34,7 +34,7 @@ jobs:
 
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y%m%d%H%M')"
+        run: echo "::set-output name=date::$(date +'%Y%m%d')"
           
       - name: Build and push
         uses: docker/build-push-action@v3
@@ -42,5 +42,5 @@ jobs:
           push: true
           tags: |
             ${{ env.IMAGE }}:latest
-            ${{ env.IMAGE }}:${{ github.run_number }}
-            ${{ env.IMAGE }}:${{ steps.date.outputs.date }}
+            ${{ env.IMAGE }}:build-${{ github.run_number }}
+            ${{ env.IMAGE }}:${{ steps.date.outputs.date }}.${{ github.run_number }}
