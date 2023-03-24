@@ -54,7 +54,7 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y%m%d')"
 
       - name: Build and export to Docker
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           load: true
           tags: |
@@ -70,7 +70,7 @@ jobs:
             ${{ env.IMAGE }}:latest
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           platforms: linux/amd64,linux/arm64
           push: true
