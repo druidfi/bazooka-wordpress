@@ -1,4 +1,4 @@
-FROM druidfi/php-fpm:8.1
+FROM druidfi/php-fpm:8.2
 
 LABEL org.opencontainers.image.description="WordPress base image to be used with Bazooka"
 
